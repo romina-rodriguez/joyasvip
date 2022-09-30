@@ -1,0 +1,114 @@
+html {
+    width: 100%;
+}
+
+.bg-joyasvip {
+    background-color: #560b2e !important;
+}
+
+.nav-item {
+    cursor: pointer;
+}
+
+.nav-link {
+    font-size: medium;
+}
+
+.navbar {
+    z-index:2;
+}
+    
+.close-navbar-toggler {
+    position:absolute;
+    top:0;
+    left:0;
+    height:100%;
+    width:100%;
+    z-index:1;
+    cursor:pointer;
+}
+
+.close-navbar-toggler.collapsed {
+    z-index:-1;
+}
+
+a {
+    color: #560b2e;
+}
+
+a:hover {
+    color: #af5f83;
+    text-decoration: none;
+}
+
+.text-bold {
+    font-weight: bold;
+}
+
+.home-main {
+    margin-top: 132px;
+    margin-bottom: 25px;
+    max-width: 100%;
+}
+
+.col-md-4 {
+    outline: 2px solid rgba(189, 189, 189, 0.789) !important;
+    outline-offset: -10px !important;
+}
+
+.jewelry-box {
+    display: grid;
+    justify-content: center;
+    padding: 20px;
+}
+
+img {
+    width: 200px;
+    height: 200px;
+}
+
+.img-small {
+    width: 100px !important;
+    height: 100px !important;
+}
+
+.jewelry-img {
+    border-radius: 50% !important;
+}
+
+.jewelry-price {
+    font-size: medium;
+    margin-top: 5px;
+}
+
+.jewelry-description {
+    font-size: small;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align: center;
+    border-top: solid 0.5px rgba(189, 189, 189, 0.789);
+    color: rgb(106, 106, 106);
+}
+
+.active {
+    font-weight: bold;
+}
+
+.footer {
+    background-color: rgb(189, 189, 189);
+    font-size: small;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: inherit;
+}
+
+.info {
+    justify-content: center;
+    text-align: center;
+    display: block;
+    font-size: x-large;
+    margin-top: 20vh;
+    padding: 50px;
+}
+

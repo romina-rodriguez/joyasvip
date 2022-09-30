@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!--Required meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {% load static %}
+
+    <!--CSS-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'home/css/home.css' %}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!--JS-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="{% static 'home/js/home.js' %}"></script>
+
+    <!--Title-->
+    <title> Joyas VIP </title>
+    <link rel="icon" href="{% static 'home/logo/purple-logo.png' %}" type="image">
+</head>
+
+<body>
+    <!--Navbar-->
+    <a class="close-navbar-toggler collapsed" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    </a>
+
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-joyasvip">
+        <a class="navbar-brand" href="">
+            <img class="img-small d-inline-block align-top" id="img-brand" alt="joyas vip logo"
+                src="/static/home/logo/white-logo.png" onmouseover="hover(this);" onmouseout="unhover(this);">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                {% if all_jewelry %}
+                <li class="nav-item">
+                    <a class="nav-link active" data-toggle="collapse" data-target=".navbar-collapse.show" 
+                    id="nav-all" onclick='change_active("nav-all","all")'>Ver todo</a>
+                </li>
+                {% endif %}
+                {% if rings %}
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show"
+                    id="nav-rings" onclick='change_active("nav-rings","rings")'>Anillos</a>
+                </li>
+                {% endif %}
+                {% if earrings %}
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show" 
+                    id="nav-earrings" onclick='change_active("nav-earrings","earrings")'>Aros</a>
+                </li>
+                {% endif %}
+                {% if pendants %}
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show"
+                    id="nav-pendants" onclick='change_active("nav-pendants","pendants")'>Colgantes</a>
+                </li>
+                {% endif %}
+                {% if bracelets %}
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show"
+                    id="nav-bracelets" onclick='change_active("nav-bracelets","bracelets")'>Pulseras</a>
+                </li>
+                {% endif %}
+                {% if necklaces %}
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show"
+                    id="nav-necklaces" onclick='change_active("nav-necklaces","necklaces")'>Collares</a>
+                </li>
+                {% endif %}
+                {% if sets %}
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show"
+                    id="nav-sets" onclick='change_active("nav-sets","sets")'>Conjuntos</a>
+                </li>
+                {% endif %}
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item text-bold">
+                    <a class="nav-link button" data-toggle="modal" data-target="#modal">Contáctanos</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!--Modal-->
+    <div class="modal fade" id="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="col-1"></div>
+                    <div class="col-10 text-center">
+                        <h4 class="modal-title">Contáctanos</h4>
+                    </div>
+                    <div class="col-1 ms-3">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="modal-body text-center">
+                    <a>
+                        <div class="d-flex justify-content-center">
+                            <span>Estamos ubicados en XX, XX.</span>
+                        </div>
+                    </a>
+                    <a href="tel:569XXXXXXXX">
+                        <div class="d-flex justify-content-center">
+                            <span>Consultas al número +56 9 XXXX XXXX</span> &nbsp;
+                            <span class="material-icons md-20">call</span>
+                        </div>
+                    </a>
+                    <a href="mailto:X@X.X" target="_blank">
+                        <div class="d-flex justify-content-center">
+                            <span>También puede enviarnos un correo electrónico</span> &nbsp;
+                            <span class="material-icons md-20">email</span>
+                        </div>
+                    </a><br>
+                    <img class="img-small" src="/static/home/logo/purple-logo.png" alt="joyas vip logo">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Main-->
+    <main class="home-main container">
+        <div class="row content" id="all">
+            {% for jewelry in all_jewelry %}
+            <div class="col-md-4">
+                <div class="jewelry-box container" id="{{ jewelry.code }}-{{ jewelry.id }}">
+                    <div class="d-flex justify-content-center">
+                        <img src="/static/home/pictures{{ jewelry.picture.url }}" class="jewelry-img" alt="{{ jewelry.description }}">
+                    </div>
+                    <div class="jewelry-price d-flex justify-content-center">{{ jewelry.price }}</div>
+                    <div class="jewelry-description d-flex justify-content-center">{{ jewelry.description }}</div>
+                </div>
+            </div>
+            {% endfor %}
+            {% if not all_jewelry %}
+            <div class="info">En este momento no tenemos productos disponibles, por favor vuelva en otro momento.</div>            
+            {% endif %}
+        </div>
+        <div class="row content" id="rings" style="display: none;">
+            {% for jewelry in rings %}
+            <div class="col-md-4">
+                <div class="jewelry-box container" id="{{ jewelry.code }}-{{ jewelry.id }}">
+                    <div class="d-flex justify-content-center">
+                        <img src="/static/home/pictures{{ jewelry.picture.url }}" class="jewelry-img" alt="{{ jewelry.description }}">
+                    </div>
+                    <div class="jewelry-price d-flex justify-content-center">{{ jewelry.price }}</div>
+                    <div class="jewelry-description d-flex justify-content-center">{{ jewelry.description }}</div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="row content" id="earrings" style="display: none;">
+            {% for jewelry in earrings %}
+            <div class="col-md-4">
+                <div class="jewelry-box container" id="{{ jewelry.code }}-{{ jewelry.id }}">
+                    <div class="d-flex justify-content-center">
+                        <img src="/static/home/pictures{{ jewelry.picture.url }}" class="jewelry-img" alt="{{ jewelry.description }}">
+                    </div>
+                    <div class="jewelry-price d-flex justify-content-center">{{ jewelry.price }}</div>
+                    <div class="jewelry-description d-flex justify-content-center">{{ jewelry.description }}</div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="row content" id="pendants" style="display: none;">
+            {% for jewelry in pendants %}
+            <div class="col-md-4">
+                <div class="jewelry-box container" id="{{ jewelry.code }}-{{ jewelry.id }}">
+                    <div class="d-flex justify-content-center">
+                        <img src="/static/home/pictures{{ jewelry.picture.url }}" class="jewelry-img" alt="{{ jewelry.description }}">
+                    </div>
+                    <div class="jewelry-price d-flex justify-content-center">{{ jewelry.price }}</div>
+                    <div class="jewelry-description d-flex justify-content-center">{{ jewelry.description }}</div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="row content" id="bracelets" style="display: none;">
+            {% for jewelry in bracelets %}
+            <div class="col-md-4">
+                <div class="jewelry-box container" id="{{ jewelry.code }}-{{ jewelry.id }}">
+                    <div class="d-flex justify-content-center">
+                        <img src="/static/home/pictures{{ jewelry.picture.url }}" class="jewelry-img" alt="{{ jewelry.description }}">
+                    </div>
+                    <div class="jewelry-price d-flex justify-content-center">{{ jewelry.price }}</div>
+                    <div class="jewelry-description d-flex justify-content-center">{{ jewelry.description }}</div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="row content" id="necklaces" style="display: none;">
+            {% for jewelry in necklaces %}
+            <div class="col-md-4">
+                <div class="jewelry-box container" id="{{ jewelry.code }}-{{ jewelry.id }}">
+                    <div class="d-flex justify-content-center">
+                        <img src="/static/home/pictures{{ jewelry.picture.url }}" class="jewelry-img" alt="{{ jewelry.description }}">
+                    </div>
+                    <div class="jewelry-price d-flex justify-content-center">{{ jewelry.price }}</div>
+                    <div class="jewelry-description d-flex justify-content-center">{{ jewelry.description }}</div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="row content" id="sets" style="display: none;">
+            {% for jewelry in sets %}
+            <div class="col-md-4">
+                <div class="jewelry-box container" id="{{ jewelry.code }}-{{ jewelry.id }}">
+                    <div class="d-flex justify-content-center">
+                        <img src="/static/home/pictures{{ jewelry.picture.url }}" class="jewelry-img" alt="{{ jewelry.description }}">
+                    </div>
+                    <div class="jewelry-price d-flex justify-content-center">{{ jewelry.price }}</div>
+                    <div class="jewelry-description d-flex justify-content-center">{{ jewelry.description }}</div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </main>
+
+    <div class="footer fixed-bottom">Todas las joyas son hechas con plata 925.</div>
